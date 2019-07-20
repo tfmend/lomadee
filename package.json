@@ -1,10 +1,6 @@
 {
   "name": "lomadee",
-<<<<<<< HEAD
   "version": "2.0.0",
-=======
-  "version": "1.0.21",
->>>>>>> bfd716a0ab58fe801a31e9fac7da0b8afb88bb00
   "description": "NodeJs client for lomadee API",
   "main": "index.js",
   "files": [
