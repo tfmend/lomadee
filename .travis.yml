@@ -19,7 +19,7 @@ jobs:
         - 'echo "Setting npm registry access"'
         - 'echo "//registry.npmjs.org/:_authToken=$authToken" > ~/.npmrc'
         - 'echo "Deploying to npm ..."'
-        - npm version patch -m "Bumping to version v%s"
+        - npm version patch -m "Bumping to version v%s [ci skip]"
         - git status
         - git push origin master
         - git push --tags
