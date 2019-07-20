@@ -14,6 +14,7 @@ jobs:
         - git config --global user.name "Travis CI"
         - 'echo "Setting github access"'
         - git remote set-url origin https://tfmend:${GH_TOKEN}@github.com/tfmend/lomadee.git
+        - git checkout master
         - git pull origin master
         - 'echo "Setting npm registry access"'
         - 'echo "//registry.npmjs.org/:_authToken=$authToken" > ~/.npmrc'
@@ -27,5 +28,4 @@ jobs:
         email: tfmend@gmail.com
         api_key: $authToken
         on:
-          tags: true
           repo: tfmend/lomadee
