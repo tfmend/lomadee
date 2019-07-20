@@ -9,7 +9,7 @@ jobs:
     - stage: npm release
       node_js: stable
       script: 
-        - 'echo "//registry.npmjs.org/:_authToken=$authToken" > ~/repo/.npmrc'
+        - 'echo "//registry.npmjs.org/:_authToken=$authToken" > ~/.npmrc'
         - 'echo "Deploying to npm ..."'
         - npm version patch
       deploy:
