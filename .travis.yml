@@ -14,11 +14,14 @@ jobs:
         - git config --global user.name "Travis CI"
         - 'echo "Setting github access"'
         - git remote rm origin
-        - git remote add origin https://tfmend:${GH_TOKEN}@github.com/tfmend/lomadee.git > /dev/null 2>&1
+        - git remote add origin https://tfmend:${GH_TOKEN}@github.com/tfmend/lomadee.git
         - 'echo "Setting npm registry access"'
         - 'echo "//registry.npmjs.org/:_authToken=$authToken" > ~/.npmrc'
         - 'echo "Deploying to npm ..."'
         - npm version patch -m "Bumping to version v%s"
+        - git status
+        - git push origin master
+        - git push --tags
       deploy:
         provider: npm
         email: tfmend@gmail.com
