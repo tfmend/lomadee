@@ -10,7 +10,7 @@
     "test": "echo \"Skiping tests\" && exit 0",
     "build": "npm run format && npm run lint && tsc",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
-    "lint": "tslint -p tsconfig.json",
+    "lint": "tslint -p tsconfig.json"
   },
   "repository": {
     "type": "git",
