@@ -13,7 +13,7 @@
     "lint": "tslint -p tsconfig.json",
     "preversion": "npm test",
     "version": "npm run build && git add .",
-    "postversion": "git push && git push --tags"
+    "postversion": "git push origin master && git push --tags"
   },
   "repository": {
     "type": "git",
