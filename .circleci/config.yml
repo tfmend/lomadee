@@ -6,7 +6,7 @@ defaults: &defaults
     - image: circleci/node:8.9.1
 
 jobs:
-  test:
+  build:
     <<: *defaults  
     steps:
       - checkout
@@ -29,7 +29,21 @@ jobs:
       - run:
           name: Authenticate with registry
           command: echo "//registry.npmjs.org/:_authToken=$npm_TOKEN" > ~/repo/.npmrc
-
+          
       - run:
           name: Publish package
           command: npm publish
+      
+            
+workflows:
+  version: 2
+  test-deploy:
+    jobs:
+      - build:
+          requires:
+            - test
+          filters:
+            tags:
+              only: /^v.*/
+            branches:
+              ignore: /.*/
