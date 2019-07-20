@@ -11,7 +11,7 @@ jobs:
       script: 
         - 'echo "//registry.npmjs.org/:_authToken=$authToken" > ~/.npmrc'
         - 'echo "Deploying to npm ..."'
-        - npm version patch
+        - npm version patch -m "Bumping to version %s"
       deploy:
         provider: npm
         email: tfmend@gmail.com
