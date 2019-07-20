@@ -40,8 +40,6 @@ workflows:
   test-deploy:
     jobs:
       - build:
-          requires:
-            - test
           filters:
             tags:
               only: /^v.*/
