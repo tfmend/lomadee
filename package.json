@@ -1,0 +1,38 @@
+{
+  "name": "lomadee",
+  "version": "1.0.0",
+  "description": "NodeJs client for lomadee API",
+  "main": "index.js",
+  "files": [
+    "lib/**/*"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm run format && npm run lint && tsc",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tfmend/lomadee.git"
+  },
+  "keywords": [
+    "lomadee"
+  ],
+  "author": "Thiago Furtado",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tfmend/lomadee/issues"
+  },
+  "homepage": "https://github.com/tfmend/lomadee.git#README.md",
+  "devDependencies": {
+    "prettier": "^1.18.2",
+    "tslint": "^5.18.0",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.5.3"
+  },
+  "dependencies": {
+    "@types/node-fetch": "^2.3.7",
+    "node-fetch": "^2.6.0"
+  }
+}
