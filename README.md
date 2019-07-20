@@ -1,7 +1,7 @@
 # Lomadee API
 
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/tfmend/lomadee/master/LICENSE)
-[![npm version](https://badge.fury.io/js/lomadee-api.svg)](https://badge.fury.io/js/lomadee)
+[![npm version](https://badge.fury.io/js/lomadee.svg)](https://badge.fury.io/js/lomadee)
 
 Lomadee NodeJs API client
 
