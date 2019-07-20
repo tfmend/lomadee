@@ -13,8 +13,8 @@ jobs:
         - git config --global user.email "travis@travis-ci.org"
         - git config --global user.name "Travis CI"
         - 'echo "Setting github access"'
-        - git remote rm origin
-        - git remote add origin https://tfmend:${GH_TOKEN}@github.com/tfmend/lomadee.git
+        - git remote set-url origin https://tfmend:${GH_TOKEN}@github.com/tfmend/lomadee.git
+        - git pull origin master
         - 'echo "Setting npm registry access"'
         - 'echo "//registry.npmjs.org/:_authToken=$authToken" > ~/.npmrc'
         - 'echo "Deploying to npm ..."'
