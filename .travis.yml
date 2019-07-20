@@ -1,6 +1,14 @@
 language: node_js
-node_js: 
-  - "stable"
+node_js:
+- stable
 cache:
   directories:
-    - "node_modules"
+  - node_modules
+deploy:
+  provider: npm
+  email: tfmend@gmail.com
+  api_key:
+    secure: rP7AwLPr+zsS1DeIPNa0vGyRyA8dxbDsXj0+w89Of/gQ605Jrm3ndPPo8KuxZDWNpI47xMZVkwfCRcaOyXBmzmoW9dAkkrE4hdHrFkTaEUsxxAcHbNHxnW5djaFDNl3tXjPcIZUfX7O6J49/A7nbFb91O6u8QfMo7YQtOnIG0NjE6mw7wGaZ28yHePwohO+RwfQrvgSz+heVM2BZH7Ed/FmEsRNrN0CPQH1SQe+EMYUzzeMW5p6OzregPEud2G7rqO5HwCxv8B4kIIcHMVoRcWyl9kq8aKsgH3rtNfdN71I+P51u0cfgmq/AxB0U/lklPPY613qJvROurV59LkOYgtnZVQ5B0OOkCYnuWHHPBNlyXhfB7yHuwq9fcjo9Ig8v2dP4AWxXz/TYAzmHWSmY2CcuzTkDkfC8Bhua1l9t3MMKwpQVDglE1kDne3ZT65uXoLdAY4oI+3coBMgZfEXE9RhIs424vmpKIfRkr5zuRi/ZXDU6aC4N7Z3JDicn5rlrFT9CK7j4lm86t8X/5t8/Gmvb4m2xsivMzyqt27Lrn2Qt1PXy/mj20lmuc1FjpCPZw099Xz/g0upB8J94jTRUZ28A5Psm5TzJrW57ehzBnjRi6WfyS+F+aDal7kumg1z9/cATTTXK+Y5EAUl7WzigSxJghn4JE2wcC6K3wuz2mVw=
+  on:
+    tags: true
+    repo: tfmend/lomadee
