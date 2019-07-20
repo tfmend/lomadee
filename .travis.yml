@@ -8,14 +8,17 @@ jobs:
   include:
     - stage: npm release
       node_js: stable
-      script: 
+      script:
+        - 'echo "Configuring git..."' 
         - git config --global user.email "travis@travis-ci.org"
         - git config --global user.name "Travis CI"
+        - 'echo "Setting github access"'
         - git remote rm origin
         - git remote add origin https://tfmend:${GH_TOKEN}@github.com/tfmend/lomadee.git > /dev/null 2>&1
+        - 'echo "Setting npm registry access"'
         - 'echo "//registry.npmjs.org/:_authToken=$authToken" > ~/.npmrc'
         - 'echo "Deploying to npm ..."'
-        - npm version patch -m "Bumping to version %s"
+        - npm version patch -m "Bumping to version v%s"
       deploy:
         provider: npm
         email: tfmend@gmail.com
