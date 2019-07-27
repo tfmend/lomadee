@@ -3,9 +3,9 @@
 		"target": "es2015",
 		"module": "commonjs",
 		"declaration": true,
-		"outDir": "lib",
+		"outDir": "dist",
 		"strict": true,
 		"esModuleInterop": true
 	},
-	"exclude": ["node_modules", "**/__tests__/*", "lib"]
+	"exclude": ["node_modules", "dist"]
 }
