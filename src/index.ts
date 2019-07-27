@@ -2,6 +2,7 @@ import { DeepLinkResource } from './resources/offer/deeplink';
 import { OfferResource } from './resources/offer/offers';
 import { ProductResource } from './resources/offer/products';
 import { CategoryResource } from './resources/offer/categories';
+import { CouponResource } from './resources/coupon/coupon';
 
 class Lomadee {
   private token: string;
@@ -39,6 +40,10 @@ class Lomadee {
 
   category(): CategoryResource {
     return CategoryResource.getInstance(this.token, this.sourceId);
+  }
+
+  coupon(): CouponResource {
+    return CouponResource.getInstance(this.token, this.sourceId);
   }
 }
 

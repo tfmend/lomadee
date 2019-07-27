@@ -11,6 +11,7 @@ export interface Store {
   id: number;
   name: string;
   thumbnail: string;
+  image: string;
   link: string;
   hasOffer: number;
   maxCommission: number;
@@ -37,6 +38,18 @@ export interface Product {
   category: Category;
   hasOffer: number;
   link: string;
+}
+
+export interface Coupon {
+  id: number;
+  description: string;
+  code: string;
+  discount: number;
+  store: Store;
+  category: Category;
+  vigency: Date;
+  link: string;
+  new: boolean;
 }
 
 /* Offer */
@@ -99,6 +112,7 @@ export interface Pagination {
 export interface RequestInfo {
   status: string;
   message: string;
+  generatedDate: Date;
 }
 export interface DeepLinkResponse extends LomadeeResponse {
   deeplinks: DeepLink[];
@@ -114,4 +128,7 @@ export interface CategoryResponse extends LomadeeResponse {
 }
 export interface StoreResponse extends LomadeeResponse {
   products: Store[];
+}
+export interface CouponResponse extends LomadeeResponse {
+  coupons: Coupon[];
 }
