@@ -25,6 +25,7 @@ jobs:
         - git status
         - git push origin master
         - git push --tags
+        - npm publish
       deploy:
         provider: npm
         email: tfmend@gmail.com
