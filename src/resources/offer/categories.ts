@@ -2,9 +2,9 @@ import { LomadeeResource } from '../resources';
 import { LomadeeRequest, CategoryResponse } from '../../model';
 
 export class CategoryResource extends LomadeeResource {
-  static getInstance(token: string, sourceId: string): CategoryResource {
+  static getInstance(token: string, sourceId: string, env: string): CategoryResource {
     if (!CategoryResource.instance) {
-      CategoryResource.instance = new CategoryResource(token, sourceId);
+      CategoryResource.instance = new CategoryResource(token, sourceId, env);
     }
     return CategoryResource.instance;
   }
@@ -13,8 +13,8 @@ export class CategoryResource extends LomadeeResource {
 
   private operation = '_bestsellers';
 
-  private constructor(token: string, sourceId: string) {
-    super(token, sourceId);
+  private constructor(token: string, sourceId: string, env: string) {
+    super(token, sourceId, env);
   }
 
   bestSellers = (storeId: string, size: number = 12, page: number = 1) => {

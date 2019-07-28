@@ -2,17 +2,17 @@ import { LomadeeResource } from '../resources';
 import { DeepLinkResponse } from '../../model';
 
 export class DeepLinkResource extends LomadeeResource {
-  static getInstance(token: string, sourceId: string): DeepLinkResource {
+  static getInstance(token: string, sourceId: string, env: string): DeepLinkResource {
     if (!DeepLinkResource.instance) {
-      DeepLinkResource.instance = new DeepLinkResource(token, sourceId);
+      DeepLinkResource.instance = new DeepLinkResource(token, sourceId, env);
     }
     return DeepLinkResource.instance;
   }
 
   private static instance: DeepLinkResource;
 
-  private constructor(token: string, sourceId: string) {
-    super(token, sourceId);
+  private constructor(token: string, sourceId: string, env: string) {
+    super(token, sourceId, env);
   }
 
   /**

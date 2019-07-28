@@ -7,13 +7,15 @@ import { CouponResource } from './resources/coupon/coupon';
 class Lomadee {
   private token: string;
   private sourceId: string;
+  private env: string = 'sandbox';
 
   /**
    *
    * @param token Lomadee App-Token
    * @param sourceId Affiliated ID
+   * @param env Lomadee environment: must be sandbox or production
    */
-  constructor(token: string, sourceId: string) {
+  constructor(token: string, sourceId: string, env?: string) {
     if (!token || token === '') {
       throw new Error('Initialize error: App-Token must be provided');
     }
@@ -22,28 +24,32 @@ class Lomadee {
       throw new Error('Initialize error: soucerId must be provided');
     }
 
+    if (env && env === 'production') {
+      this.env = env;
+    }
+
     this.token = token;
     this.sourceId = sourceId;
   }
 
   deepLink(): DeepLinkResource {
-    return DeepLinkResource.getInstance(this.token, this.sourceId);
+    return DeepLinkResource.getInstance(this.token, this.sourceId, this.env);
   }
 
   offer(): OfferResource {
-    return OfferResource.getInstance(this.token, this.sourceId);
+    return OfferResource.getInstance(this.token, this.sourceId, this.env);
   }
 
   product(): ProductResource {
-    return ProductResource.getInstance(this.token, this.sourceId);
+    return ProductResource.getInstance(this.token, this.sourceId, this.env);
   }
 
   category(): CategoryResource {
-    return CategoryResource.getInstance(this.token, this.sourceId);
+    return CategoryResource.getInstance(this.token, this.sourceId, this.env);
   }
 
   coupon(): CouponResource {
-    return CouponResource.getInstance(this.token, this.sourceId);
+    return CouponResource.getInstance(this.token, this.sourceId, this.env);
   }
 }
 

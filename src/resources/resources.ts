@@ -8,20 +8,19 @@ export abstract class LomadeeResource {
 
   protected token: string;
   protected sourceId: string;
+  protected env: string;
 
-  constructor(token: string, sourceId: string) {
+  constructor(token: string, sourceId: string, env: string) {
     this.token = token;
     this.sourceId = sourceId;
+    this.env = env;
   }
 
   protected get<T>(request: LomadeeRequest): Promise<T> {
     return new Promise<T>((resolve, reject) => {
-      fetch(
-        `${LomadeeResource.SANDBOX_BASE_URL}/${this.token}/${this.URI()}?${Utils.queryParamsString(
-          request.sourceId,
-          request.queryParams,
-        )}`,
-      )
+      const baseurl =
+        this.env === 'production' ? LomadeeResource.PRODUCTION_BASE_URL : LomadeeResource.SANDBOX_BASE_URL;
+      fetch(`${baseurl}/${this.token}/${this.URI()}?${Utils.queryParamsString(request.sourceId, request.queryParams)}`)
         .then(response => response.json())
         .then(body => {
           resolve(body as T);

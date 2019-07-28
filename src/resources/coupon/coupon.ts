@@ -2,9 +2,9 @@ import { LomadeeResource } from '../resources';
 import { LomadeeRequest, CouponResponse, CategoryResponse, StoreResponse } from '../../model';
 
 export class CouponResource extends LomadeeResource {
-  static getInstance(token: string, sourceId: string): CouponResource {
+  static getInstance(token: string, sourceId: string, env: string): CouponResource {
     if (!CouponResource.instance) {
-      CouponResource.instance = new CouponResource(token, sourceId);
+      CouponResource.instance = new CouponResource(token, sourceId, env);
     }
     return CouponResource.instance;
   }
@@ -13,8 +13,8 @@ export class CouponResource extends LomadeeResource {
 
   private operation = '_all';
 
-  private constructor(token: string, sourceId: string) {
-    super(token, sourceId);
+  private constructor(token: string, sourceId: string, env: string) {
+    super(token, sourceId, env);
   }
 
   all = (categoryId?: string, storeId?: string, keyword?: string): Promise<CouponResponse> => {
