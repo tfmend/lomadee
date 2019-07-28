@@ -17,7 +17,7 @@ export class CouponResource extends LomadeeResource {
     super(token, sourceId);
   }
 
-  all = (categoryId: string, storeId: string, keyword: string): Promise<CouponResponse> => {
+  all = (categoryId: string = null, storeId: string = null, keyword: string = null): Promise<CouponResponse> => {
     this.operation = '_all';
     return this.call({
       queryParams: {
@@ -42,7 +42,7 @@ export class CouponResource extends LomadeeResource {
     });
   };
 
-  categories = (storeId: string): Promise<CategoryResponse> => {
+  categories = (storeId: string = null): Promise<CategoryResponse> => {
     this.operation = `_categories`;
     return this.call<CategoryResponse>({
       queryParams: {
@@ -52,7 +52,7 @@ export class CouponResource extends LomadeeResource {
     });
   };
 
-  stores = (categoryId: string): Promise<StoreResponse> => {
+  stores = (categoryId: string = null): Promise<StoreResponse> => {
     this.operation = `_stores`;
     return this.call<StoreResponse>({
       queryParams: {
