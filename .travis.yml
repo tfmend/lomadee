@@ -16,6 +16,8 @@ jobs:
         - git remote set-url origin https://tfmend:${GH_TOKEN}@github.com/tfmend/lomadee.git
         - git checkout master
         - git pull origin master
+        - 'echo "Building package"'
+        - npm run build
         - 'echo "Setting npm registry access"'
         - 'echo "//registry.npmjs.org/:_authToken=$authToken" > ~/.npmrc'
         - 'echo "Deploying to npm ..."'
