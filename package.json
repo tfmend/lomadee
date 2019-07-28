@@ -1,10 +1,12 @@
 {
   "name": "lomadee",
-  "version": "2.0.7",
+  "version": "2.0.8",
   "description": "NodeJs client for lomadee API",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "test": "echo \"Skiping tests\" && exit 0",
     "build": "npm run format && npm run lint && tsc",
