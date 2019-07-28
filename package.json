@@ -4,7 +4,7 @@
   "description": "NodeJs client for lomadee API",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "files": ["./dist/**/*", "src/**/*"],
+  "files": ["dist/**/*", "src/**/*"],
   "scripts": {
     "test": "echo \"Skiping tests\" && exit 0",
     "build": "npm run format && npm run lint && tsc",
